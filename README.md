@@ -42,6 +42,10 @@ java -jar fun7-0.0.1-SNAPSHOT.jar application.properties`
     * `GET api/v1/check-services`
         * Test with all users: The user with a login count of 18 will have multiplayer enabled, the user with a login
           count of 0 will have it disabled, and the admin user will not be able to access information for this call.
+        * In the body only variable that is used in the code is `cc`. `userId`  is not needed because we can obtain
+          necessary information about the user from the token (can be changed in the future as the limitation of this
+          solution is that a user can only get their own information). `timezone` is also not necessary since we are
+          interested in the current time in Ljubljana, not the current time of a user.
     * `GET api/v1/admin/users`
         * Test these api with admin user. Save uuid of specific user for next two API calls.
         * Try to run the same API call with a user who has the 'user' role.
